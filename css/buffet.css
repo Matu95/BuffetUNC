@@ -1,0 +1,21 @@
+.form-signin {
+	text-align: center;
+	width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+    align-content: center;
+}
+.boton {
+   max-width: 300px;
+   padding: 15px;
+    margin: 0 auto;
+}
+.container{
+	margin-top: 110px;
+}
+body{
+	background:url(../Img/fondo.png);
+	background-size:cover;
+	background-repeat:no-repeat;
+}
