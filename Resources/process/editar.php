@@ -1,7 +1,7 @@
 <!--validando sesion-->
 <?php
 session_start();
-include 'serv.php';
+include '../includes/serv.php';
 if(isset($_SESSION['correo'])) {?>
 <!DOCTYPE html>
 <html>
@@ -9,10 +9,10 @@ if(isset($_SESSION['correo'])) {?>
 <!--conectando a bootstrap3-->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <script src="js/jquery.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  
+  <link href="../../css/bootstrap.min.css" rel="stylesheet">
+  <script src="../../js/jquery.min.js"></script>
+  <script src="../../js/bootstrap.min.js"></script>
+
 </head>
 <body style="background:#E5E5E5">
 
@@ -38,7 +38,7 @@ if(isset($_SESSION['correo'])) {?>
                 <li><a href="stock.php">STOCK</a></li>
                 <li><a href="producto.php">INGRESAR PRODUCTO</a></li>
                 <li><a href="logout.php" class="glyphicon glyphicon-off"></a></li>
-                
+
               </ul>
 
                   <form class="navbar-form navbar-left" action="buscar.php" method="post" autocomplete="off"> <!--BUSCADOR-->
@@ -64,15 +64,15 @@ if(isset($_SESSION['correo'])) {?>
                   $fila=mysqli_fetch_row($resultado); $resultado;//codigo lee los datos fila por fila
 
 
-    //aqui empieza el formulario de guardado              
-    echo "<form role='form' action='guardado.php?id=$producto' method='POST' autocomplete=off align='center'>";
+    //aqui empieza el formulario de guardado
+    echo "<form role='form' action='../views/guardado.php?id=$producto' method='POST' autocomplete=off align='center'>";
 ?>
 <div class="container">
   <div class="row">
    <div class="col-md-5">
             <h1 align="center"><strong>Editor</strong></h1>
              <h3 align="center">Nombre del producto</h3>
-               <input type="text" class="form-control" placeholder="Campo de texto" name="nombre"> 
+               <input type="text" class="form-control" placeholder="Campo de texto" name="nombre">
                <h3 align="center">Cantidad</h3>
                <input type="number" class="form-control" placeholder="ingrese solo valores numericos" name="cantidad">
                <h3 align="center">Marca</h3>
@@ -82,7 +82,7 @@ if(isset($_SESSION['correo'])) {?>
                <input type='checkbox'required/><strong>Acepto guardar los cambios</strong><br>
                <botton class="btn btn-default"><input type="reset" value="Borrar información"></botton>
                <button type="submit" class="btn btn-default" >  Guardar cambios</button>
-               
+
    </div>
 
    <div class="col-md-7"><br><br><br><br><br>
@@ -123,13 +123,12 @@ if(isset($_SESSION['correo'])) {?>
 </div>
 </form>
 
-	<script src="js/jquery.js"></script>
-	<script src="js/bootstrap.min.js"></script>
+	<script src="../../js/jquery.js"></script>
+	<script src="../../js/bootstrap.min.js"></script>
 </body>
 </html>
 <?php
 }else{
-  echo '<script> window.location="sesionoff.php"; </script>';
+  echo '<script> window.location="../includes/sesionoff.php"; </script>';
 }
 ?>
-

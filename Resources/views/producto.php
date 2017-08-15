@@ -53,7 +53,7 @@ if(isset($_SESSION['correo'])) {?>
    </div><br><br>
     <div class="col-md" style="background:#63A4A9">.</div>
     <!--formulario-->
-<FORM role="form" align=center action="productos.php" method="GET" style="margin-top:15px" autocomplete="off">
+<FORM role="form" align=center action="../process/newproducto.php" method="GET" style="margin-top:15px" autocomplete="off">
 <div class="container">
   <div class="row">
     <div class="col-md-6">

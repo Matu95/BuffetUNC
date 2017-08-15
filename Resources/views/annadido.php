@@ -4,9 +4,9 @@
 <!--conectando a bootstrap3-->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <script src="js/jquery.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
+  <link href="../../css/bootstrap.min.css" rel="stylesheet">
+  <script src="../../js/jquery.min.js"></script>
+  <script src="../../js/bootstrap.min.js"></script>
 
 </head>
 <body style="background:#E5E5E5">
@@ -33,7 +33,7 @@
                 <li><a href="stock.php">STOCK</a></li>
                 <li><a href="producto.php">INGRESAR PRODUCTO</a></li>
                 <li><a href="logout.php" class="glyphicon glyphicon-off"></a></li>
-                
+
               </ul>
 
                   <form class="navbar-form navbar-left" action="buscar.php" method="post" autocomplete="off"> <!--BUSCADOR-->
@@ -51,14 +51,13 @@
     <br><br><br><br>
 
   <div align="center">
-   <img src="check.png" style=" height : 150px;" >
+   <img src="../../img/check.png" style=" height : 150px;" >
    <br>
    <h1>El producto fue agregado éxitosamente.</h1>
    <h3>Será redirigido a la sección Ingresar producto.</h3>
   </div>
-<script src="js/jquery.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <META HTTP-EQUIV="REFRESH" CONTENT="1.5;producto.php"> 
+<script src="../js/jquery.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <META HTTP-EQUIV="REFRESH" CONTENT="1.5;producto.php">
 </body>
 </html>
-

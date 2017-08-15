@@ -1,7 +1,7 @@
 <!--validando sesion-->
 <?php
 session_start();
-include 'serv.php';
+include '../includes/serv.php';
 if(isset($_SESSION['correo'])) {?>
 
 <?php
@@ -17,14 +17,14 @@ $direccion=$_GET["d"];
 $verificar=mysqli_query($conexion,"SELECT * FROM preveedor WHERE nombre LIKE '%".$nombre."%' OR contacto LIKE '$contacto' ");
 
 if (mysqli_num_rows($verificar)>0) {
-      echo "<META HTTP-EQUIV='REFRESH' CONTENT='0; url=errorprov.php'> ";
+      echo "<META HTTP-EQUIV='REFRESH' CONTENT='0; url=../views/errorprov.php'> ";
 
     }
 else{
 $query="INSERT INTO preveedor( nombre, tipo, contacto, direccion) VALUES ('$nombre','$tipo','$contacto','$direccion')";
 
 		mysqli_query($conexion,$query);
-        echo "<META HTTP-EQUIV='REFRESH' CONTENT='1; url=annadidoprov.php'> ";
+        echo "<META HTTP-EQUIV='REFRESH' CONTENT='1; url=../views/annadidoprov.php'> ";
 }
 
 mysqli_close($conexion);

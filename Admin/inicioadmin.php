@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'serv.php';
+include '../Resources/includes/serv.php';
 if(isset($_SESSION['correo'])) {?>
 <html>
 <head>
@@ -107,6 +107,6 @@ if(isset($_SESSION['correo'])) {?>
 </html>
 <?php
 }else{
-  echo '<script> window.location="sesionoff.php"; </script>';
+  echo '<script> window.location="../Resources/includes/sesionoff.php"; </script>';
 }
 ?>

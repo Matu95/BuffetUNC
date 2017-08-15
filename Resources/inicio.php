@@ -95,7 +95,7 @@ if(isset($_SESSION['correo'])) {?>
               echo "<td>".$fila[3]."</td>";
               echo "<td>".$fila[4]."</td>";
               echo "<td>";
-              echo "<form action='eliminarpro.php?id=".$fila[0]."' method='post' >";
+              echo "<form action='process/eliminarpro.php?id=".$fila[0]."' method='post' >";
               echo "<input type='checkbox'required/> ";
               echo "<input type='submit' value='Eliminar'>";
               echo "</form>";

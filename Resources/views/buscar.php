@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'serv.php';
+include '../Includes/serv.php';
 
 if(isset($_SESSION['correo'])) {?>
 <!DOCTYPE html>
@@ -9,9 +9,9 @@ if(isset($_SESSION['correo'])) {?>
 <!--conectando a bootstrap3-->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <script src="js/jquery.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
+  <link href="../../css/bootstrap.min.css" rel="stylesheet">
+  <script src="../../js/jquery.min.js"></script>
+  <script src="../../js/bootstrap.min.js"></script>
 
 </head>
 <body style="background:#E5E5E5">
@@ -38,7 +38,7 @@ if(isset($_SESSION['correo'])) {?>
                 <li><a href="stock.php">STOCK</a></li>
                 <li><a href="producto.php">INGRESAR PRODUCTO</a></li>
                 <li><a href="logout.php" class="glyphicon glyphicon-off"></a></li>
-                
+
               </ul>
 
                   <form class="navbar-form navbar-left" action="buscar.php" method="post" autocomplete="off"> <!--BUSCADOR-->
@@ -96,19 +96,19 @@ $existen = mysqli_num_rows($resultado);
               echo "<td>".$fila[3]."</td>";
               echo "<td>".$fila[4]."</td>";
               echo "<td>";
-              echo "<form action='eliminar.php?id=".$fila[0]."' method='post' >";
+              echo "<form action='../process/eliminar.php?id=".$fila[0]."' method='post' >";
               echo "<input type='checkbox'required/> ";
               echo "<input type='submit' value='Eliminar'>";
               echo "</form>";
               echo "</td>";
               echo "<td>";
-              echo "<form action='modificar.php?id=".$fila[0]."' method='post' >";
+              echo "<form action='../process/modificar.php?id=".$fila[0]."' method='post' >";
               echo "<input type='number' name='cantidad'required/>";
               echo "<input type='submit' value='modificar'>";
               echo "</form>";
               echo "</td>";
               echo "<td>";
-              echo "<form action='editar.php?id=".$fila[0]."' method='post' >";
+              echo "<form action='../process/editar.php?id=".$fila[0]."' method='post' >";
               echo "<input type='submit' value='Editar datos'>";
               echo "</form>";
               echo "</td>";
@@ -123,12 +123,12 @@ $existen = mysqli_num_rows($resultado);
               ?>
 </div>
 </div>
-	<script src="js/jquery.js"></script>
-	<script src="js/bootstrap.min.js"></script>
+	<script src="../../js/jquery.js"></script>
+	<script src="../../js/bootstrap.min.js"></script>
 </body>
 </html>
 <?php
 }else{
-  echo '<script> window.location="sesionoff.php"; </script>';
+  echo '<script> window.location="../includes/sesionoff.php"; </script>';
 }
 ?>

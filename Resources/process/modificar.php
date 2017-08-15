@@ -22,6 +22,6 @@ mysqli_close($conexion);
 
 ?>
 <body>
-<META HTTP-EQUIV="REFRESH" CONTENT="0.1;stock.php"> 
+<META HTTP-EQUIV="REFRESH" CONTENT="0.1;../views/stock.php"> 
 </body>
 </html>

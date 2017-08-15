@@ -1,12 +1,18 @@
+<!--validando sesion-->
+<?php
+session_start();
+include '../includes/serv.php';
+if(isset($_SESSION['correo'])) {?>
+
 <!DOCTYPE html>
 <html>
 <head>
 <!--conectando a bootstrap3-->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <script src="js/jquery.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
+  <link href="../../css/bootstrap.min.css" rel="stylesheet">
+  <script src="../../js/jquery.min.js"></script>
+  <script src="../../js/bootstrap.min.js"></script>
 
 </head>
 <body style="background:#E5E5E5">
@@ -33,7 +39,7 @@
                 <li><a href="stock.php">STOCK</a></li>
                 <li><a href="producto.php">INGRESAR PRODUCTO</a></li>
                 <li><a href="logout.php" class="glyphicon glyphicon-off"></a></li>
-                
+
               </ul>
 
                   <form class="navbar-form navbar-left" action="buscar.php" method="post" autocomplete="off"> <!--BUSCADOR-->
@@ -51,14 +57,33 @@
     <br><br><br><br>
 
   <div align="center">
-   <img src="check.png" style=" height : 150px;" >
-   <br>
-   <h1>Se registro un nuevo proveedor.</h1>
-   <h3>Será redirigido a la sección Inicio.</h3>
+ 	 <img src="../../img/check.png" style=" height : 150px;" >
+ 	 <br>
+ 	 <h1>Eliminado correctamente.</h1>
+ 	 <h3>Será redirigido al inicio.</h3>
   </div>
-<script src="js/jquery.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <META HTTP-EQUIV="REFRESH" CONTENT="1.5;inicio.php"> 
+
+<?php
+$conexion=mysqli_connect("localhost","root","","bdunc");
+//asigno un variable para insertar info. a la base de datos
+
+
+$eliminado=$_GET["id"];
+
+$query="DELETE FROM preveedor WHERE ID_proveedor=$eliminado";
+mysqli_query($conexion,$query);
+
+mysqli_close($conexion);
+
+?>
+
+	<script src="../../js/jquery.js"></script>
+	<script src="../../js/bootstrap.min.js"></script>
+	<META HTTP-EQUIV="REFRESH" CONTENT="1;../inicio.php">
 </body>
 </html>
-
+<?php
+}else{
+  echo '<script> window.location="sesionoff.php"; </script>';
+}
+?>

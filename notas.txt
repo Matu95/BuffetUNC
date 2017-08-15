@@ -1,0 +1,4 @@
+<--realizar includes para minimizar el codigo(sectores:)-->
+
+*buscador
+*sesiones
